@@ -1,8 +1,6 @@
 package com.example.cursomc.resources;
 
-import com.example.cursomc.domain.Categoria;
 import com.example.cursomc.domain.Cliente;
-import com.example.cursomc.services.CategoriaService;
 import com.example.cursomc.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

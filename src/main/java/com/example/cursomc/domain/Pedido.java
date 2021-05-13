@@ -1,8 +1,10 @@
 package com.example.cursomc.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,7 +14,9 @@ public class Pedido implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Date instante;
+
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    private LocalDateTime instante;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "pedido")
     private Pagamento pagamento;
@@ -31,7 +35,7 @@ public class Pedido implements Serializable {
     public Pedido() {
     }
 
-    public Pedido(Integer id, Date instante, Cliente cliente, Endereco enderecoDeEntrega) {
+    public Pedido(Integer id, LocalDateTime instante, Cliente cliente, Endereco enderecoDeEntrega) {
         this.id = id;
         this.instante = instante;
         this.cliente = cliente;
@@ -54,11 +58,11 @@ public class Pedido implements Serializable {
         this.id = id;
     }
 
-    public Date getInstance() {
+    public LocalDateTime getInstance() {
         return instante;
     }
 
-    public void setInstance(Date instante) {
+    public void setInstance(LocalDateTime instante) {
         this.instante = instante;
     }
 

@@ -9,11 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.Serializable;
-
 @RestController
-@RequestMapping(value = "/pedidos")
-public class ProdutoResource implements Serializable {
+@RequestMapping(value = "/produtos")
+public class ProdutoResource {
 
     @Autowired
     private ProdutoService produtoService;

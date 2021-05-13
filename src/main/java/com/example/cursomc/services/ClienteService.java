@@ -1,7 +1,6 @@
 package com.example.cursomc.services;
 
 import com.example.cursomc.domain.Cliente;
-import com.example.cursomc.repositories.CategoriaRepository;
 import com.example.cursomc.repositories.ClienteRepository;
 import com.example.cursomc.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;

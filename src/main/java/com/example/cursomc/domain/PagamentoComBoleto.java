@@ -1,38 +1,42 @@
 package com.example.cursomc.domain;
 
 import com.example.cursomc.domain.enums.EstadoPagamento;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.Entity;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 public class PagamentoComBoleto extends Pagamento{
 
-    private Date dataVencimento;
-    private Date dataPagamento;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dataVencimento;
+
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dataPagamento;
 
     public PagamentoComBoleto(){
     }
 
-    public PagamentoComBoleto(Integer id, EstadoPagamento estado, Pedido pedido, Date dataVencimento, Date dataPagamento) {
+    public PagamentoComBoleto(Integer id, EstadoPagamento estado, Pedido pedido, LocalDate dataVencimento, LocalDate dataPagamento) {
         super(id, estado, pedido);
         this.dataVencimento = dataVencimento;
         this.dataPagamento = dataPagamento;
     }
 
-    public Date getDataVencimento() {
+    public LocalDate getDataVencimento() {
         return dataVencimento;
     }
 
-    public void setDataVencimento(Date dataVencimento) {
+    public void setDataVencimento(LocalDate dataVencimento) {
         this.dataVencimento = dataVencimento;
     }
 
-    public Date getDataPagamento() {
+    public LocalDate getDataPagamento() {
         return dataPagamento;
     }
 
-    public void setDataPagamento(Date dataPagamento) {
+    public void setDataPagamento(LocalDate dataPagamento) {
         this.dataPagamento = dataPagamento;
     }
 
